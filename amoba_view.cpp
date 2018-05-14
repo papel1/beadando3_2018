@@ -6,7 +6,6 @@ using namespace std;
 
 amoba_view::amoba_view(int _pixel_w, int _pixel_h)
 {
-    //this->pixel_h=pixel_h;
     pixel_h=_pixel_h;
     pixel_w=_pixel_w;
 
@@ -23,7 +22,7 @@ void amoba_view::event_loop()
 {
     event ev;
 
-    while(gin>>ev)
+    while(gin>>ev && ev.keycode!=key_escape)
     {
         amoba_w->handle(ev);
         gout<<refresh;
